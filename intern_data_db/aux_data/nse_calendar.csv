@@ -1,0 +1,12 @@
+date,is_trading_day,session_start,session_end,notes
+2025-08-22,True,09:15,15:30,
+2025-08-23,False,,,Weekend
+2025-08-24,False,,,Weekend
+2025-08-25,True,09:15,15:30,
+2025-08-26,True,09:15,15:30,
+2025-08-27,True,09:15,15:30,
+2025-08-28,True,09:15,15:30,NIFTY monthly F&O expiry
+2025-08-29,False,,,Weekend
+2025-08-30,False,,,Weekend
+2025-09-01,True,09:15,15:30,
+2025-09-02,True,09:15,15:30,

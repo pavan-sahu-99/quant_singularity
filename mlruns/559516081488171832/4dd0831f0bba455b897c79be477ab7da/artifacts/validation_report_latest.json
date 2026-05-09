@@ -1,0 +1,298 @@
+{
+    "run_timestamp": "2026-05-09T12:21:01.946369",
+    "summary": {
+        "total_critical_errors_dropped": 21151,
+        "total_warnings_dropped": 2088,
+        "total_issues_fixed": 750
+    },
+    "findings": [
+        {
+            "source": "nifty_spot/2025-08-22.csv",
+            "finding": "Spot data passed all validation checks",
+            "severity": "INFO",
+            "rows_affected": 0,
+            "decision": "kept",
+            "rationale": "No anomalies found after running full check suite"
+        },
+        {
+            "source": "nifty_spot/2025-08-25.csv",
+            "finding": "Spot data passed all validation checks",
+            "severity": "INFO",
+            "rows_affected": 0,
+            "decision": "kept",
+            "rationale": "No anomalies found after running full check suite"
+        },
+        {
+            "source": "nifty_spot/2025-08-26.csv",
+            "finding": "Spot data passed all validation checks",
+            "severity": "INFO",
+            "rows_affected": 0,
+            "decision": "kept",
+            "rationale": "No anomalies found after running full check suite"
+        },
+        {
+            "source": "nifty_spot/2025-08-27.csv",
+            "finding": "Spot data passed all validation checks",
+            "severity": "INFO",
+            "rows_affected": 0,
+            "decision": "kept",
+            "rationale": "No anomalies found after running full check suite"
+        },
+        {
+            "source": "nifty_spot/2025-08-28.csv",
+            "finding": "Spot data passed all validation checks",
+            "severity": "INFO",
+            "rows_affected": 0,
+            "decision": "kept",
+            "rationale": "No anomalies found after running full check suite"
+        },
+        {
+            "source": "nifty_spot/2025-09-01.csv",
+            "finding": "Spot data passed all validation checks",
+            "severity": "INFO",
+            "rows_affected": 0,
+            "decision": "kept",
+            "rationale": "No anomalies found after running full check suite"
+        },
+        {
+            "source": "nifty_spot/2025-09-02.csv",
+            "finding": "Spot data passed all validation checks",
+            "severity": "INFO",
+            "rows_affected": 0,
+            "decision": "kept",
+            "rationale": "No anomalies found after running full check suite"
+        },
+        {
+            "source": "nifty_futures/2025-08-28.csv",
+            "finding": "Near-month basis on expiry day: +42.46 at 09:15, converging to +2.91 at 15:29. Near/mid correlation = 0.9882 (below 0.99 threshold).",
+            "severity": "INFO",
+            "rows_affected": 0,
+            "decision": "kept",
+            "rationale": "Basis convergence on expiry day is expected market behaviour. Correlation divergence is caused by expiring contract's basis collapsing to zero while mid-month retains full cost-of-carry. Not a data error."
+        },
+        {
+            "source": "nifty_futures/2025-09-01.csv",
+            "finding": "near_month_expiry reads '2025-08-28' post-expiry.",
+            "severity": "ERROR",
+            "rows_affected": 375,
+            "decision": "fixed",
+            "rationale": "Vendor failed to roll contract on Sep 1. Forcibly patching mid_month as near_month."
+        },
+        {
+            "source": "nifty_futures/2025-09-02.csv",
+            "finding": "near_month_expiry reads '2025-08-28' post-expiry.",
+            "severity": "ERROR",
+            "rows_affected": 375,
+            "decision": "fixed",
+            "rationale": "Vendor failed to roll contract on Sep 1. Forcibly patching mid_month as near_month."
+        },
+        {
+            "source": "options_chain/2025-08-22_2025-08-28.csv",
+            "finding": "Pre-open snapshots between 09:00 and 09:10 with volume=0.",
+            "severity": "WARNING",
+            "rows_affected": 174,
+            "decision": "dropped",
+            "rationale": "Pre-open auction artifacts are not continuous market prices."
+        },
+        {
+            "source": "options_chain/2025-08-22_2025-08-28.csv",
+            "finding": "Mathematically impossible candles (High < max(O,C) or Low > min(O,C)).",
+            "severity": "CRITICAL",
+            "rows_affected": 1725,
+            "decision": "dropped",
+            "rationale": "Vendor aggregation corrupted. Cannot be safely used for feature engineering."
+        },
+        {
+            "source": "options_chain/2025-08-22_2025-09-25.csv",
+            "finding": "Pre-open snapshots between 09:00 and 09:10 with volume=0.",
+            "severity": "WARNING",
+            "rows_affected": 174,
+            "decision": "dropped",
+            "rationale": "Pre-open auction artifacts are not continuous market prices."
+        },
+        {
+            "source": "options_chain/2025-08-22_2025-09-25.csv",
+            "finding": "Mathematically impossible candles (High < max(O,C) or Low > min(O,C)).",
+            "severity": "CRITICAL",
+            "rows_affected": 1757,
+            "decision": "dropped",
+            "rationale": "Vendor aggregation corrupted. Cannot be safely used for feature engineering."
+        },
+        {
+            "source": "options_chain/2025-08-25_2025-08-28.csv",
+            "finding": "Pre-open snapshots between 09:00 and 09:10 with volume=0.",
+            "severity": "WARNING",
+            "rows_affected": 174,
+            "decision": "dropped",
+            "rationale": "Pre-open auction artifacts are not continuous market prices."
+        },
+        {
+            "source": "options_chain/2025-08-25_2025-08-28.csv",
+            "finding": "Mathematically impossible candles (High < max(O,C) or Low > min(O,C)).",
+            "severity": "CRITICAL",
+            "rows_affected": 1761,
+            "decision": "dropped",
+            "rationale": "Vendor aggregation corrupted. Cannot be safely used for feature engineering."
+        },
+        {
+            "source": "options_chain/2025-08-25_2025-09-25.csv",
+            "finding": "Pre-open snapshots between 09:00 and 09:10 with volume=0.",
+            "severity": "WARNING",
+            "rows_affected": 174,
+            "decision": "dropped",
+            "rationale": "Pre-open auction artifacts are not continuous market prices."
+        },
+        {
+            "source": "options_chain/2025-08-25_2025-09-25.csv",
+            "finding": "Mathematically impossible candles (High < max(O,C) or Low > min(O,C)).",
+            "severity": "CRITICAL",
+            "rows_affected": 1748,
+            "decision": "dropped",
+            "rationale": "Vendor aggregation corrupted. Cannot be safely used for feature engineering."
+        },
+        {
+            "source": "options_chain/2025-08-26_2025-08-28.csv",
+            "finding": "Pre-open snapshots between 09:00 and 09:10 with volume=0.",
+            "severity": "WARNING",
+            "rows_affected": 174,
+            "decision": "dropped",
+            "rationale": "Pre-open auction artifacts are not continuous market prices."
+        },
+        {
+            "source": "options_chain/2025-08-26_2025-08-28.csv",
+            "finding": "Mathematically impossible candles (High < max(O,C) or Low > min(O,C)).",
+            "severity": "CRITICAL",
+            "rows_affected": 1754,
+            "decision": "dropped",
+            "rationale": "Vendor aggregation corrupted. Cannot be safely used for feature engineering."
+        },
+        {
+            "source": "options_chain/2025-08-26_2025-09-25.csv",
+            "finding": "Pre-open snapshots between 09:00 and 09:10 with volume=0.",
+            "severity": "WARNING",
+            "rows_affected": 174,
+            "decision": "dropped",
+            "rationale": "Pre-open auction artifacts are not continuous market prices."
+        },
+        {
+            "source": "options_chain/2025-08-26_2025-09-25.csv",
+            "finding": "Mathematically impossible candles (High < max(O,C) or Low > min(O,C)).",
+            "severity": "CRITICAL",
+            "rows_affected": 1730,
+            "decision": "dropped",
+            "rationale": "Vendor aggregation corrupted. Cannot be safely used for feature engineering."
+        },
+        {
+            "source": "options_chain/2025-08-27_2025-08-28.csv",
+            "finding": "Pre-open snapshots between 09:00 and 09:10 with volume=0.",
+            "severity": "WARNING",
+            "rows_affected": 174,
+            "decision": "dropped",
+            "rationale": "Pre-open auction artifacts are not continuous market prices."
+        },
+        {
+            "source": "options_chain/2025-08-27_2025-08-28.csv",
+            "finding": "Mathematically impossible candles (High < max(O,C) or Low > min(O,C)).",
+            "severity": "CRITICAL",
+            "rows_affected": 1753,
+            "decision": "dropped",
+            "rationale": "Vendor aggregation corrupted. Cannot be safely used for feature engineering."
+        },
+        {
+            "source": "options_chain/2025-08-27_2025-09-25.csv",
+            "finding": "Pre-open snapshots between 09:00 and 09:10 with volume=0.",
+            "severity": "WARNING",
+            "rows_affected": 174,
+            "decision": "dropped",
+            "rationale": "Pre-open auction artifacts are not continuous market prices."
+        },
+        {
+            "source": "options_chain/2025-08-27_2025-09-25.csv",
+            "finding": "Mathematically impossible candles (High < max(O,C) or Low > min(O,C)).",
+            "severity": "CRITICAL",
+            "rows_affected": 1801,
+            "decision": "dropped",
+            "rationale": "Vendor aggregation corrupted. Cannot be safely used for feature engineering."
+        },
+        {
+            "source": "options_chain/2025-08-28_2025-08-28.csv",
+            "finding": "Pre-open snapshots between 09:00 and 09:10 with volume=0.",
+            "severity": "WARNING",
+            "rows_affected": 174,
+            "decision": "dropped",
+            "rationale": "Pre-open auction artifacts are not continuous market prices."
+        },
+        {
+            "source": "options_chain/2025-08-28_2025-08-28.csv",
+            "finding": "Mathematically impossible candles (High < max(O,C) or Low > min(O,C)).",
+            "severity": "CRITICAL",
+            "rows_affected": 1746,
+            "decision": "dropped",
+            "rationale": "Vendor aggregation corrupted. Cannot be safely used for feature engineering."
+        },
+        {
+            "source": "options_chain/2025-08-28_2025-08-28.csv",
+            "finding": "IV column frozen at single value 0.1540 across all 2604 rows \u2014 complete IV feed failure.",
+            "severity": "CRITICAL",
+            "rows_affected": 2604,
+            "decision": "iv_nulled",
+            "rationale": "Vendor IV calculation engine sent static placeholder on expiry day. IV column set to NaN. Price/OI columns retained."
+        },
+        {
+            "source": "options_chain/2025-08-28_2025-09-25.csv",
+            "finding": "Pre-open snapshots between 09:00 and 09:10 with volume=0.",
+            "severity": "WARNING",
+            "rows_affected": 174,
+            "decision": "dropped",
+            "rationale": "Pre-open auction artifacts are not continuous market prices."
+        },
+        {
+            "source": "options_chain/2025-08-28_2025-09-25.csv",
+            "finding": "Mathematically impossible candles (High < max(O,C) or Low > min(O,C)).",
+            "severity": "CRITICAL",
+            "rows_affected": 1794,
+            "decision": "dropped",
+            "rationale": "Vendor aggregation corrupted. Cannot be safely used for feature engineering."
+        },
+        {
+            "source": "options_chain/2025-09-01_2025-09-25.csv",
+            "finding": "Pre-open snapshots between 09:00 and 09:10 with volume=0.",
+            "severity": "WARNING",
+            "rows_affected": 174,
+            "decision": "dropped",
+            "rationale": "Pre-open auction artifacts are not continuous market prices."
+        },
+        {
+            "source": "options_chain/2025-09-01_2025-09-25.csv",
+            "finding": "Mathematically impossible candles (High < max(O,C) or Low > min(O,C)).",
+            "severity": "CRITICAL",
+            "rows_affected": 1812,
+            "decision": "dropped",
+            "rationale": "Vendor aggregation corrupted. Cannot be safely used for feature engineering."
+        },
+        {
+            "source": "options_chain/2025-09-02_2025-09-25.csv",
+            "finding": "Pre-open snapshots between 09:00 and 09:10 with volume=0.",
+            "severity": "WARNING",
+            "rows_affected": 174,
+            "decision": "dropped",
+            "rationale": "Pre-open auction artifacts are not continuous market prices."
+        },
+        {
+            "source": "options_chain/2025-09-02_2025-09-25.csv",
+            "finding": "Mathematically impossible candles (High < max(O,C) or Low > min(O,C)).",
+            "severity": "CRITICAL",
+            "rows_affected": 1770,
+            "decision": "dropped",
+            "rationale": "Vendor aggregation corrupted. Cannot be safely used for feature engineering."
+        },
+        {
+            "source": "aux/india_vix.csv",
+            "finding": "VIX validation complete",
+            "severity": "INFO",
+            "rows_affected": 0,
+            "decision": "kept",
+            "rationale": "Full check suite passed"
+        }
+    ]
+}
